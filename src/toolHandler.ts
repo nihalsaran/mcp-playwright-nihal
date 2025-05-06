@@ -167,7 +167,7 @@ async function ensureBrowser(browserSettings?: BrowserSettings) {
 
     // Launch new browser if needed
     if (!browser) {
-      const { viewport, userAgent, headless = false, browserType = 'chromium' } = browserSettings ?? {};
+      const { viewport, userAgent, headless = true, browserType = 'chromium' } = browserSettings ?? {};
       
       // If browser type is changing, force a new browser instance
       if (browser && currentBrowserType !== browserType) {
@@ -247,7 +247,7 @@ async function ensureBrowser(browserSettings?: BrowserSettings) {
     resetBrowserState();
     
     // Try one more time from scratch
-    const { viewport, userAgent, headless = false, browserType = 'chromium' } = browserSettings ?? {};
+    const { viewport, userAgent, headless = true, browserType = 'chromium' } = browserSettings ?? {};
     
     // Use the appropriate browser engine
     let browserInstance;
